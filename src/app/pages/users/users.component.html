@@ -1,0 +1,32 @@
+<div style="padding:24px">
+  <mat-table #table [dataSource]="dataSource">
+    <ng-container *ngFor="let column of columns">
+      <ng-container [matColumnDef]="column.property">
+        <mat-header-cell *matHeaderCellDef [ngStyle]="{'max-width': column.width||''}">{{ column.name }}</mat-header-cell>
+        <mat-cell *matCellDef="let row" [ngStyle]="{'max-width': column.width||''}">
+          {{ row[column.property]}}
+        </mat-cell>
+      </ng-container>
+    </ng-container>
+
+    <ng-container matColumnDef="csv">
+      <mat-header-cell *matHeaderCellDef matTooltip='Save row data as CSV file' [ngStyle]="{'max-width': '50px'}">
+        CSV
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row" (click)="$event.stopPropagation()" [ngStyle]="{'max-width': '50px', 'cursor':'pointer'}">
+        <div (click)="downloadAsCSV(row)">
+          <mat-icon color="primary">download</mat-icon>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnsKeys" style="min-height: 40px; background-color: #f0f0f0"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnsKeys;" class="tab-row"></mat-row>
+  </mat-table>
+  <mat-paginator #paginator
+                  [length]="dataSource && dataSource.data.length || 0"
+                  [pageIndex]="0"
+                  [pageSize]="10"
+                  [pageSizeOptions]="[5, 10, 20, 50, 100]" >
+  </mat-paginator>
+</div>

@@ -1,0 +1,23 @@
+<div fxLayout="column">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="logout()" matTooltip='Logout'>
+        <mat-icon>logout</mat-icon>
+      </button>
+      <span>{{userName}}</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="navigateTo('/userassessments')">
+          <span>Assessments Report</span>
+        </button>
+        <button mat-menu-item *ngIf="userRole == 'Admin'" (click)="navigateTo('/users')">
+          <span>Users</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>

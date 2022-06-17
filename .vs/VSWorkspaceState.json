@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\authentication",
+    "\\src\\app\\pages\\authentication\\login",
+    "\\src\\app\\pages\\userassessments",
+    "\\src\\app\\pages\\userassessments\\graph",
+    "\\src\\app\\services",
+    "\\src\\app\\services\\userassessments",
+    "\\src\\app\\services\\userassessments\\models"
+  ],
+  "SelectedNode": "\\src\\app\\pages\\userassessments\\userassessments.component.ts",
+  "PreviewInSolutionExplorer": false
+}

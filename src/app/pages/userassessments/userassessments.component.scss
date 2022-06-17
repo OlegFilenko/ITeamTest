@@ -1,0 +1,20 @@
+.fon-layout {
+  padding: 24px;
+  background-color: #f0f0f0;
+  height: 100vh
+}
+
+.cell-label {
+  font-weight: 300;
+  color: #909090;
+}
+
+.mouse-over-hightlight {
+  transition-property: background, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+
+  &:hover {
+    background-color: #f0f0ff;
+  }
+}

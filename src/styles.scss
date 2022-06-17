@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+.snackbar-error {
+  background-color: red !important;
+}
+
+.snackbar-success {
+  background-color: #105000 !important;
+  color: white !important;
+}
+
+.snackbar-warning {
+  background: orange !important;
+  color: rgba(0,0,0, .5) !important;
+}
+
+.snackbar-info {
+  background: cyan !important;
+  color: rgba(0,0,0, .5) !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

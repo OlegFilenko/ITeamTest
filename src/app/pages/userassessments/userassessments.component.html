@@ -1,0 +1,20 @@
+<div fxLayout="column" class="fon-layout">
+  <ng-container *ngFor="let report of dataSource">
+    <div fxLayout="row">
+      <mat-card class="mouse-over-hightlight" (click)="onReportClick(report.id)">
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+          <div fxLayout="column">
+            <ng-container *ngFor="let key of dataKeys">
+              <div fxLayout="row" fxLayoutGap="3px">
+                <span class="cell-label">{{key}}:</span>
+                <span>{{report[key]}}</span>
+              </div>
+            </ng-container>
+          </div>
+          <img [src]="report.image_url"/>
+        </div>
+      </mat-card>
+    </div>
+  </ng-container>
+
+</div>
